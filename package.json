@@ -1,0 +1,32 @@
+{
+  "name": "employee-data-service",
+  "version": "1.0.0",
+  "description": "CAP OData Service for Employee Data + Zeugnis Generation (DSAG TechXchange Workshop)",
+  "repository": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/sqlite": "^1.11.1",
+    "@sap/cds": "^8",
+    "better-sqlite3": "^12.6.2",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^8",
+    "@sap/cds-mtxs": "^2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": ":memory:"
+        }
+      }
+    }
+  }
+}

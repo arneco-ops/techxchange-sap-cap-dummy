@@ -1,0 +1,20 @@
+---
+applications:
+  - name: employee-service
+    path: .
+    memory: 256M
+    disk_quota: 512M
+    instances: 1
+    buildpacks:
+      - nodejs_buildpack
+    command: npx cds-serve
+    env:
+      NODE_ENV: production
+      AICORE_API_URL: "<aus AI Core Service Key>"
+      AICORE_DEPLOYMENT_ID: "<Deployment-ID des GenAI Hub Modells>"
+      AICORE_TOKEN_URL: "<OAuth2 Token-URL aus AI Core Service Key>"
+      AICORE_CLIENT_ID: "<OAuth2 Client ID aus AI Core Service Key>"
+      AICORE_CLIENT_SECRET: "<OAuth2 Client Secret aus AI Core Service Key>"
+      AICORE_RESOURCE_GROUP: "default"
+    routes:
+      - route: employee-service-dsag-techxchange-ws.cfapps.eu10.hana.ondemand.com
